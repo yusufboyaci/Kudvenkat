@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kudvenkat.ApplicationContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,7 +33,10 @@ namespace Kudvenkat
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext
+            services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(
+                Configuration.GetConnectionString("server=Servers;database=KudvenkatDB;uid=yusuf;pwd=123;"),
+                b => b.MigrationsAssembly("Kudvenkat")
+                ));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
