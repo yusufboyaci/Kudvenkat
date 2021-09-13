@@ -7,5 +7,6 @@ namespace Kudvenkat.ApplicationContext
 {
     public class ApplicationDbContext
     {
+
     }
 }
