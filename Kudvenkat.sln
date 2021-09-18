@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudvenkat", "Kudvenkat\Kudvenkat.csproj", "{D24CEAC3-A451-4184-83DF-E4753DCFCB5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudvenkatMVC", "KudvenkatMVC\KudvenkatMVC.csproj", "{494E4779-97AC-4C18-818A-734424C88E06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsDemo", "WebFormsDemo\WebFormsDemo.csproj", "{991E9FCB-2025-439D-ACD6-421449A59081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D24CEAC3-A451-4184-83DF-E4753DCFCB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D24CEAC3-A451-4184-83DF-E4753DCFCB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D24CEAC3-A451-4184-83DF-E4753DCFCB5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{494E4779-97AC-4C18-818A-734424C88E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494E4779-97AC-4C18-818A-734424C88E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494E4779-97AC-4C18-818A-734424C88E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494E4779-97AC-4C18-818A-734424C88E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{991E9FCB-2025-439D-ACD6-421449A59081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991E9FCB-2025-439D-ACD6-421449A59081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991E9FCB-2025-439D-ACD6-421449A59081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{991E9FCB-2025-439D-ACD6-421449A59081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

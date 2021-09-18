@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<form>
+    <div>
+        <input type="text" name="SenderMail" id="SenderMail" value="SenderMail@eamil.com" />
+    </div>
+    <div>
+        <input type="text" name="MailTo" id="MailTo" value="MailTo@mail.com" />
+    </div>
+    <div>
+        <input type="text" name="Subject" id="Subject" value="Subject" />
+    </div>
+    <div>
+        <input type="checkbox" name="IsHtml" id="IsHtml" checked />
+    </div>
+    <div>
+        <input type="text" name="Body" id="Body" value="Body" />
+    </div>
+    <div>
+        <input id="Button1" type="button" value="button" />
+    </div>
+</form>
+
+@section scripts {
+    <script>
+        $('#Button1').click(function (e) {
+            e.preventDefault();
+
+            var data = {
+                    SenderMail: $('#SenderMail').val(),
+                    MailTo: $('#MailTo').val(),
+                    Subject: $('#Subject').val(),
+                    IsHtml: $('#IsHtml').is(':checked'),
+                    Body: $('#Body').val(),
+                };
+
+            $.ajax({
+                url: '/ajax/index',
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                },
+                failure: function (errMsg) {
+                    console.log(errMsg);
+                }
+            });
+        });
+    </script>
+}
+Once you have UI working as expected, then all you have to do is call your SendEMail method.
+
+        [HttpPost]
+        public ActionResult Index(SmtpParameters input)
+        {
+
+            bool results = SendEMail(input.SenderMail,
+                input.SenderPass,
+                new ArrayList() { input.MailTo },
+                input.Subject,
+                input.IsHtml,
+                input.Body,
+                input.SmtpHost,
+                input.Port);
+
+            return Json(results);
+        }
+
